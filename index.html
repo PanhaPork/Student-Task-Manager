@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple student task manager built with HTML, CSS, and JavaScript." />
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="app-card" aria-labelledby="appTitle">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">✓</div>
+        <div>
+          <p class="eyebrow">STAY ON TRACK</p>
+          <h1 id="appTitle">Student Task Manager</h1>
+          <p class="subtitle">One task at a time. You’ve got this.</p>
+        </div>
+      </header>
+
+      <section class="add-section" aria-labelledby="addHeading">
+        <h2 id="addHeading">Add a new task</h2>
+        <form id="taskForm" class="task-form" novalidate>
+          <label class="visually-hidden" for="taskInput">Enter a task</label>
+          <input
+            id="taskInput"
+            name="task"
+            type="text"
+            placeholder="e.g. Finish HTML assignment"
+            maxlength="120"
+            autocomplete="off"
+            aria-describedby="formMessage"
+          />
+          <button class="add-button" type="submit"><span aria-hidden="true">＋</span> Add Task</button>
+        </form>
+        <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="list-section" aria-labelledby="listHeading">
+        <div class="list-heading-row">
+          <h2 id="listHeading">My task list</h2>
+          <div class="task-counter" aria-live="polite">
+            <span id="taskCount">0</span>
+            <span id="taskCountLabel">tasks</span>
+          </div>
+        </div>
+
+        <p id="emptyState" class="empty-state">
+          <span class="empty-icon" aria-hidden="true">✦</span>
+          <strong>No tasks yet</strong>
+          <span>Add your first task above and make today count.</span>
+        </p>
+
+        <ul id="taskList" class="task-list" aria-label="Your tasks"></ul>
+      </section>
+
+      <footer class="app-footer">
+        <span class="footer-dot" aria-hidden="true"></span>
+        <span id="progressText">Ready when you are.</span>
+      </footer>
+    </section>
+    <p class="page-note">Your tasks stay in this page while it is open. No account needed.</p>
+  </main>
+</body>
+</html>
